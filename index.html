@@ -188,6 +188,10 @@
     font-family:'IBM Plex Mono',monospace;font-size:10px;
     letter-spacing:.15em;text-transform:uppercase;color:var(--chalk-dim);
   }
+  .ts-line{
+    margin-top:12px;font-size:9px;letter-spacing:.1em;
+    color:var(--chalk-dim);opacity:.7;
+  }
   @media (prefers-reduced-motion:no-preference){
     .tie,.lb-row{animation:rise .4s ease both}
     @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -383,8 +387,22 @@
     </div>
   </div>
 
-  <footer>Final · MetLife Stadium · Sun 19 July</footer>
+  <footer>
+    Final · MetLife Stadium · Sun 19 July
+    <div class="ts-line">Last updated: Tue 07 Jul 2026, 19:23 BST · Now: <span id="live-clock">—</span> BST</div>
+  </footer>
 </div>
 
+<script>
+(function(){
+  var el = document.getElementById('live-clock');
+  var fmt = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+  });
+  function tick(){ el.textContent = fmt.format(new Date()); }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
 </body>
 </html>
