@@ -156,6 +156,35 @@
   }
   .qf-through .flag{width:auto}
 
+  .archive{margin-top:22px}
+  .archive > summary{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:12px 14px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    cursor:pointer;list-style:none;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--chalk-dim);
+  }
+  .archive > summary::-webkit-details-marker{display:none}
+  .archive > summary:hover{color:var(--chalk)}
+  .archive > summary::after{
+    content:"▸";color:var(--gold);font-size:13px;flex:none;
+    transition:transform .2s ease;
+  }
+  .archive[open] > summary{
+    border-bottom-left-radius:0;border-bottom-right-radius:0;
+  }
+  .archive[open] > summary::after{transform:rotate(90deg)}
+  .archive-body{
+    padding:16px 14px 4px;
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    border-top:none;
+    border-bottom-left-radius:10px;border-bottom-right-radius:10px;
+  }
+
   .grave{
     display:grid;grid-template-columns:1fr 1fr;gap:8px;
   }
@@ -201,7 +230,7 @@
 <body>
 
 <header>
-  <div class="eyebrow">FIFA World Cup 2026 · Round of 16</div>
+  <div class="eyebrow">FIFA World Cup 2026 · Quarter-Finals</div>
   <h1>The Sweepstake</h1>
   <div class="sub">Updated Tue 7 July, late · after Switzerland beat Colombia 4–3 on pens</div>
 </header>
@@ -231,65 +260,98 @@
     </div>
   </div>
 
-  <!-- BRACKET -->
+  <!-- QUARTER FINALS -->
   <div class="section">
-    <div class="stitle"><h2>The Bracket</h2></div>
-    <p class="snote">Last 16, grouped by quarter-final path. Winners meet in the QF shown above each pair.</p>
+    <div class="stitle"><h2>Quarter Finals</h2></div>
+    <p class="snote">The Round of 16 is done — four ties left before the semis.</p>
 
-    <div class="qf-label">QF 1 · Thu 9 Jul · Boston — France v Morocco</div>
+    <div class="qf-label">QF 1 · Thu 9 Jul · Boston</div>
     <div class="tie">
-      <div class="tie-meta"><span>Sat 4 Jul · Houston</span><span class="ft">FULL TIME</span></div>
-      <div class="team winner"><span class="flag">🇲🇦</span><span class="tname">Morocco</span><span class="owner">Jack</span><span class="score">3</span></div>
-      <div class="team loser"><span class="flag">🇨🇦</span><span class="tname">Canada</span><span class="owner">Jamie</span><span class="score">0</span></div>
-    </div>
-    <div class="tie">
-      <div class="tie-meta"><span>Sat 4 Jul · Philadelphia</span><span class="ft">FULL TIME</span></div>
-      <div class="team winner"><span class="flag">🇫🇷</span><span class="tname">France</span><span class="owner">Ellie</span><span class="score">1</span></div>
-      <div class="team loser"><span class="flag">🇵🇾</span><span class="tname">Paraguay</span><span class="owner">Jack</span><span class="score">0</span></div>
-      <div class="qf-through">⚔️ Ellie v Jack in the quarters — winner likely faces Martini</div>
+      <div class="tie-meta"><span>Boston</span><span>THU 9 JUL</span></div>
+      <div class="team"><span class="flag">🇫🇷</span><span class="tname">France</span><span class="owner">Ellie</span></div>
+      <div class="team"><span class="flag">🇲🇦</span><span class="tname">Morocco</span><span class="owner">Jack</span></div>
     </div>
 
-    <div class="qf-label">QF 2 · Fri 10 Jul · Los Angeles — Spain v Belgium</div>
+    <div class="qf-label">QF 2 · Fri 10 Jul · Los Angeles</div>
     <div class="tie">
-      <div class="tie-meta"><span>Mon 6 Jul · Dallas</span><span class="ft">FULL TIME</span></div>
-      <div class="team winner"><span class="flag">🇪🇸</span><span class="tname">Spain</span><span class="owner">Martini</span><span class="score">1</span></div>
-      <div class="team loser"><span class="flag">🇵🇹</span><span class="tname">Portugal</span><span class="owner">Sophie</span><span class="score">0</span></div>
-      <div class="qf-through">🇪🇸 A 91st-minute winner sends Spain through — heartbreak for Sophie</div>
-    </div>
-    <div class="tie">
-      <div class="tie-meta"><span>Mon 6 Jul · Seattle</span><span class="ft">FULL TIME</span></div>
-      <div class="team winner"><span class="flag">🇧🇪</span><span class="tname">Belgium</span><span class="owner">Antonis</span><span class="score">4</span></div>
-      <div class="team loser"><span class="flag">🇺🇸</span><span class="tname">USA</span><span class="owner">Mollie</span><span class="score">1</span></div>
-      <div class="qf-through">🇧🇪 De Ketelaere double sinks the hosts — Antonis v Martini in LA</div>
+      <div class="tie-meta"><span>Los Angeles</span><span>FRI 10 JUL</span></div>
+      <div class="team"><span class="flag">🇪🇸</span><span class="tname">Spain</span><span class="owner">Martini</span></div>
+      <div class="team"><span class="flag">🇧🇪</span><span class="tname">Belgium</span><span class="owner">Antonis</span></div>
     </div>
 
-    <div class="qf-label">QF 3 · Sat 11 Jul · Miami — Norway v England</div>
+    <div class="qf-label">QF 3 · Sat 11 Jul · Miami</div>
     <div class="tie">
-      <div class="tie-meta"><span>Sun 5 Jul · New York/NJ</span><span class="ft">FULL TIME</span></div>
-      <div class="team loser"><span class="flag">🇧🇷</span><span class="tname">Brazil</span><span class="owner">Chloe</span><span class="score">1</span></div>
-      <div class="team winner"><span class="flag">🇳🇴</span><span class="tname">Norway</span><span class="owner">Martini</span><span class="score">2</span></div>
-      <div class="qf-through">💥 Haaland strikes down Brazil — the upset of the round</div>
-    </div>
-    <div class="tie">
-      <div class="tie-meta"><span>Sun 5 Jul · Mexico City</span><span class="ft">FULL TIME</span></div>
-      <div class="team loser"><span class="flag">🇲🇽</span><span class="tname">Mexico</span><span class="owner">Dan</span><span class="score">2</span></div>
-      <div class="team winner"><span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="tname">England</span><span class="owner">TPFP</span><span class="score">3</span></div>
-      <div class="qf-through">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England win at the Azteca — Martini v TPFP next</div>
+      <div class="tie-meta"><span>Miami</span><span>SAT 11 JUL</span></div>
+      <div class="team"><span class="flag">🇳🇴</span><span class="tname">Norway</span><span class="owner">Martini</span></div>
+      <div class="team"><span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="tname">England</span><span class="owner">TPFP</span></div>
     </div>
 
-    <div class="qf-label">QF 4 · Sat 11 Jul · Kansas City — Argentina v Switzerland</div>
+    <div class="qf-label">QF 4 · Sat 11 Jul · Kansas City</div>
     <div class="tie">
-      <div class="tie-meta"><span>Tue 7 Jul · Atlanta</span><span class="ft">FULL TIME</span></div>
-      <div class="team winner"><span class="flag">🇦🇷</span><span class="tname">Argentina</span><span class="owner">Nicole</span><span class="score">3</span></div>
-      <div class="team loser"><span class="flag">🇪🇬</span><span class="tname">Egypt</span><span class="owner">Sophie</span><span class="score">2</span></div>
-      <div class="qf-through">🇦🇷 Down 2-0 with 20 to go — Messi drags Argentina through in stoppage time, Sophie's out</div>
+      <div class="tie-meta"><span>Kansas City</span><span>SAT 11 JUL</span></div>
+      <div class="team"><span class="flag">🇦🇷</span><span class="tname">Argentina</span><span class="owner">Nicole</span></div>
+      <div class="team"><span class="flag">🇨🇭</span><span class="tname">Switzerland</span><span class="owner">Conor</span></div>
     </div>
-    <div class="tie">
-      <div class="tie-meta"><span>Tue 7 Jul · Vancouver</span><span class="ft">FULL TIME (pens)</span></div>
-      <div class="team winner"><span class="flag">🇨🇭</span><span class="tname">Switzerland</span><span class="owner">Conor</span><span class="score">0</span></div>
-      <div class="team loser"><span class="flag">🇨🇴</span><span class="tname">Colombia</span><span class="owner">Mollie</span><span class="score">0</span></div>
-      <div class="qf-through">🇨🇭 0-0 through 120 minutes, Switzerland win it 4-3 on pens — Conor joins Nicole in the quarters, Mollie's done</div>
-    </div>
+
+    <details class="archive">
+      <summary>Round of 16 — full results</summary>
+      <div class="archive-body">
+        <div class="qf-label">QF 1 · Boston — France v Morocco</div>
+        <div class="tie">
+          <div class="tie-meta"><span>Sat 4 Jul · Houston</span><span class="ft">FULL TIME</span></div>
+          <div class="team winner"><span class="flag">🇲🇦</span><span class="tname">Morocco</span><span class="owner">Jack</span><span class="score">3</span></div>
+          <div class="team loser"><span class="flag">🇨🇦</span><span class="tname">Canada</span><span class="owner">Jamie</span><span class="score">0</span></div>
+        </div>
+        <div class="tie">
+          <div class="tie-meta"><span>Sat 4 Jul · Philadelphia</span><span class="ft">FULL TIME</span></div>
+          <div class="team winner"><span class="flag">🇫🇷</span><span class="tname">France</span><span class="owner">Ellie</span><span class="score">1</span></div>
+          <div class="team loser"><span class="flag">🇵🇾</span><span class="tname">Paraguay</span><span class="owner">Jack</span><span class="score">0</span></div>
+          <div class="qf-through">⚔️ Ellie v Jack in the quarters — winner likely faces Martini</div>
+        </div>
+
+        <div class="qf-label">QF 2 · Los Angeles — Spain v Belgium</div>
+        <div class="tie">
+          <div class="tie-meta"><span>Mon 6 Jul · Dallas</span><span class="ft">FULL TIME</span></div>
+          <div class="team winner"><span class="flag">🇪🇸</span><span class="tname">Spain</span><span class="owner">Martini</span><span class="score">1</span></div>
+          <div class="team loser"><span class="flag">🇵🇹</span><span class="tname">Portugal</span><span class="owner">Sophie</span><span class="score">0</span></div>
+          <div class="qf-through">🇪🇸 A 91st-minute winner sends Spain through — heartbreak for Sophie</div>
+        </div>
+        <div class="tie">
+          <div class="tie-meta"><span>Mon 6 Jul · Seattle</span><span class="ft">FULL TIME</span></div>
+          <div class="team winner"><span class="flag">🇧🇪</span><span class="tname">Belgium</span><span class="owner">Antonis</span><span class="score">4</span></div>
+          <div class="team loser"><span class="flag">🇺🇸</span><span class="tname">USA</span><span class="owner">Mollie</span><span class="score">1</span></div>
+          <div class="qf-through">🇧🇪 De Ketelaere double sinks the hosts — Antonis v Martini in LA</div>
+        </div>
+
+        <div class="qf-label">QF 3 · Miami — Norway v England</div>
+        <div class="tie">
+          <div class="tie-meta"><span>Sun 5 Jul · New York/NJ</span><span class="ft">FULL TIME</span></div>
+          <div class="team loser"><span class="flag">🇧🇷</span><span class="tname">Brazil</span><span class="owner">Chloe</span><span class="score">1</span></div>
+          <div class="team winner"><span class="flag">🇳🇴</span><span class="tname">Norway</span><span class="owner">Martini</span><span class="score">2</span></div>
+          <div class="qf-through">💥 Haaland strikes down Brazil — the upset of the round</div>
+        </div>
+        <div class="tie">
+          <div class="tie-meta"><span>Sun 5 Jul · Mexico City</span><span class="ft">FULL TIME</span></div>
+          <div class="team loser"><span class="flag">🇲🇽</span><span class="tname">Mexico</span><span class="owner">Dan</span><span class="score">2</span></div>
+          <div class="team winner"><span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="tname">England</span><span class="owner">TPFP</span><span class="score">3</span></div>
+          <div class="qf-through">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England win at the Azteca — Martini v TPFP next</div>
+        </div>
+
+        <div class="qf-label">QF 4 · Kansas City — Argentina v Switzerland</div>
+        <div class="tie">
+          <div class="tie-meta"><span>Tue 7 Jul · Atlanta</span><span class="ft">FULL TIME</span></div>
+          <div class="team winner"><span class="flag">🇦🇷</span><span class="tname">Argentina</span><span class="owner">Nicole</span><span class="score">3</span></div>
+          <div class="team loser"><span class="flag">🇪🇬</span><span class="tname">Egypt</span><span class="owner">Sophie</span><span class="score">2</span></div>
+          <div class="qf-through">🇦🇷 Down 2-0 with 20 to go — Messi drags Argentina through in stoppage time, Sophie's out</div>
+        </div>
+        <div class="tie">
+          <div class="tie-meta"><span>Tue 7 Jul · Vancouver</span><span class="ft">FULL TIME (pens)</span></div>
+          <div class="team winner"><span class="flag">🇨🇭</span><span class="tname">Switzerland</span><span class="owner">Conor</span><span class="score">0</span></div>
+          <div class="team loser"><span class="flag">🇨🇴</span><span class="tname">Colombia</span><span class="owner">Mollie</span><span class="score">0</span></div>
+          <div class="qf-through">🇨🇭 0-0 through 120 minutes, Switzerland win it 4-3 on pens — Conor joins Nicole in the quarters, Mollie's done</div>
+        </div>
+      </div>
+    </details>
   </div>
 
   <!-- FULL SQUAD STATUS -->
@@ -391,7 +453,7 @@
 
   <footer>
     Final · MetLife Stadium · Sun 19 July
-    <div class="ts-line">Last updated: Tue 07 Jul 2026, 23:53 BST · Now: <span id="live-clock">—</span> BST</div>
+    <div class="ts-line">Last updated: Tue 07 Jul 2026, 23:59 BST · Now: <span id="live-clock">—</span> BST</div>
   </footer>
 </div>
 
